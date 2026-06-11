@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Leonela ❤️</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+min-height:100vh;
+overflow-x:hidden;
+color:white;
+}
+
+.container{
+text-align:center;
+padding:40px 20px;
+}
+
+h1{
+font-size:3rem;
+margin-bottom:20px;
+animation:fadeIn 2s;
+}
+
+p{
+font-size:1.2rem;
+max-width:700px;
+margin:auto;
+line-height:1.7;
+}
+
+button{
+padding:15px 30px;
+border:none;
+border-radius:30px;
+background:white;
+color:#ff4f81;
+font-size:18px;
+cursor:pointer;
+margin-top:20px;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.1);
+}
+
+.hidden{
+display:none;
+}
+
+.card{
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(10px);
+padding:25px;
+margin:20px auto;
+max-width:700px;
+border-radius:20px;
+}
+
+.heart{
+position:fixed;
+bottom:-20px;
+font-size:20px;
+animation:float 6s linear infinite;
+opacity:.8;
+}
+
+@keyframes float{
+0%{
+transform:translateY(0);
+opacity:1;
+}
+100%{
+transform:translateY(-100vh);
+opacity:0;
+}
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.quiz-btn{
+display:block;
+margin:15px auto;
+width:250px;
+}
+
+.final-message{
+font-size:1.4rem;
+line-height:1.8;
+padding:20px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<h1>🌸 Para Leonela 🌸</h1>
+
+<p>
+Esta pequeña aventura fue creada para una persona muy especial.
+Gracias por cada risa, cada consejo y cada recuerdo.
+</p>
+
+<button onclick="startAdventure()">
+Comenzar la aventura ❤️
+</button>
+
+<div id="quiz" class="hidden">
+
+<div class="card">
+<h2>🎮 Pregunta 1</h2>
+<p>¿Quién es la mejor amiga del mundo?</p>
+
+<button class="quiz-btn" onclick="correct()">Leonela ❤️</button>
+<button class="quiz-btn" onclick="wrong()">Otra persona</button>
+</div>
+
+</div>
+
+<div id="secret" class="hidden">
+
+<div class="card">
+<h2>🎁 Mensaje Desbloqueado</h2>
+
+<p class="final-message">
+
+Leonela,
+
+Quería crear algo especial para ti porque las palabras a veces no son suficientes.
+
+Gracias por estar en mi vida, por escucharme, apoyarme y compartir tantos momentos conmigo.
+
+Tu amistad significa mucho para mí y siempre voy a valorar cada recuerdo que hemos construido juntos.
+
+Espero que esta página te saque una sonrisa y te recuerde lo importante que eres.
+
+❤️🌸✨
+
+</p>
+
+<button onclick="showMemory()">
+Abrir Recuerdo Especial
+</button>
+
+</div>
+
+</div>
+
+<div id="memory" class="hidden">
+
+<div class="card">
+<h2>⭐ Un recuerdo especial</h2>
+
+<p>
+Aquí puedes escribir una anécdota única entre ustedes,
+algo que solo Leonela y tú entiendan.
+</p>
+
+<h2 style="margin-top:20px;">
+💖 Gracias por ser mi mejor amiga 💖
+</h2>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function startAdventure(){
+document.getElementById("quiz").classList.remove("hidden");
+}
+
+function correct(){
+document.getElementById("secret").classList.remove("hidden");
+}
+
+function wrong(){
+alert("😅 Inténtalo otra vez.");
+}
+
+function showMemory(){
+document.getElementById("memory").classList.remove("hidden");
+}
+
+function createHeart(){
+
+const heart=document.createElement("div");
+
+heart.classList.add("heart");
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.fontSize=(Math.random()*20+15)+"px";
+
+heart.style.animationDuration=
+(Math.random()*3+4)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},7000);
+
+}
+
+setInterval(createHeart,300);
+
+</script>
+
+</body>
+</html>
