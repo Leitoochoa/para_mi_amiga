@@ -1,53 +1,59 @@
-function scrollToSection(id){
-document.getElementById(id).scrollIntoView();
-}
+function nextStep(id){
 
-function correct(){
-document.getElementById("quiz-result").innerHTML =
-"⭐ Correcto. Siempre serás mi estrellita.";
+document.querySelectorAll(".screen")
+.forEach(s=>s.classList.remove("active"));
+
+document.getElementById(id)
+.classList.add("active");
+
 }
 
 function wrong(){
-document.getElementById("quiz-result").innerHTML =
-"😅 Inténtalo otra vez.";
+
+document.getElementById("respuesta")
+.innerHTML="😅 Inténtalo otra vez.";
+
 }
 
-function openLetter(element){
+function correctQuiz(){
 
-const text =
-element.querySelector(".hidden-text");
+document.getElementById("respuesta")
+.innerHTML="✨ Correcto.";
 
-if(text.style.display==="block"){
-text.style.display="none";
+setTimeout(()=>{
+
+nextStep("estrella");
+
+},1200);
+
 }
-else{
-text.style.display="block";
+
+function wrongStar(){
+
+alert("Esa no es tu estrella ⭐");
+
 }
+
+function goodStar(){
+
+alert("🌟 ¡Te encontré, mi estrellita!");
+
+setTimeout(()=>{
+
+nextStep("cartas");
+
+},500);
+
 }
 
-const images =
-document.querySelectorAll(".gallery img");
+function openLetter(letter){
 
-const lightbox =
-document.getElementById("lightbox");
+const content =
+letter.querySelector(".content");
 
-const lightboxImg =
-document.getElementById("lightbox-img");
-
-images.forEach(img=>{
-
-img.addEventListener("click",()=>{
-
-lightbox.style.display="flex";
-
-lightboxImg.src=img.src;
-
-});
-
-});
-
-function closeLightbox(){
-
-lightbox.style.display="none";
+content.style.display =
+content.style.display === "block"
+? "none"
+: "block";
 
 }
