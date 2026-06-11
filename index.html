@@ -4,155 +4,186 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mi Estrellita ⭐</title>
-
 <link rel="stylesheet" href="style.css">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-<div id="stars"></div>
+<div class="stars"></div>
 
-<section class="hero">
+<!-- INTRO -->
+<section id="intro" class="screen active">
 
-<h1>⭐ Mi Estrellita ⭐</h1>
+    <h1>⭐ Mi Estrellita ⭐</h1>
 
-<p>
-Hay personas que aparecen en tu vida y dejan una huella imposible de borrar.
-</p>
+    <p>
+        Hay personas que pasan por nuestra vida...
+        y otras que dejan una luz imposible de olvidar.
+    </p>
 
-<button onclick="scrollToSection('menu')">
-Comenzar ✨
-</button>
-
-</section>
-
-<section id="menu">
-
-<h2>Explora nuestro universo 🌌</h2>
-
-<div class="cards">
-
-<div class="card" onclick="scrollToSection('galeria')">
-📸 Galería
-</div>
-
-<div class="card" onclick="scrollToSection('quiz')">
-🎮 Quiz
-</div>
-
-<div class="card" onclick="scrollToSection('cartas')">
-💌 Cartas
-</div>
-
-<div class="card" onclick="scrollToSection('final')">
-⭐ Sorpresa
-</div>
-
-</div>
+    <button onclick="nextStep('carta')">
+        ✨ Comenzar
+    </button>
 
 </section>
 
-<section id="galeria">
+<!-- CARTA -->
+<section id="carta" class="screen">
 
-<h2>📸 Nuestros Recuerdos</h2>
+    <div class="card">
 
-<div class="gallery">
+        <h2>💌 Una carta para ti</h2>
 
-<img src="images/foto1.jpg">
-<img src="images/foto2.jpg">
-<img src="images/foto3.jpg">
-<img src="images/foto4.jpg">
-<img src="images/foto5.jpg">
-<img src="images/foto6.jpg">
-<img src="images/foto7.jpg">
-<img src="images/foto8.jpg">
+        <p>
+            Hola, mi estrellita.
+            <br><br>
+            Quería hacer algo diferente.
+            No un mensaje cualquiera.
+            Sino un pequeño universo donde puedas descubrir
+            todo lo especial que eres para mí.
+        </p>
 
-</div>
+        <button onclick="nextStep('galeria')">
+            Ver recuerdos 📸
+        </button>
 
-</section>
-
-<section id="quiz">
-
-<h2>🎮 Quiz de la Estrellita</h2>
-
-<div class="quiz-box">
-
-<p>¿Quién es la mejor estrellita?</p>
-
-<button onclick="correct()">⭐ Tú</button>
-
-<button onclick="wrong()">Otra persona</button>
-
-<p id="quiz-result"></p>
-
-</div>
+    </div>
 
 </section>
 
-<section id="cartas">
+<!-- GALERÍA -->
+<section id="galeria" class="screen">
 
-<h2>💌 Cartas Secretas</h2>
+    <h2>📸 Nuestros recuerdos</h2>
 
-<div class="letters">
+    <div class="gallery">
 
-<div class="letter" onclick="openLetter(this)">
-Lo que admiro de ti
-<div class="hidden-text">
-Tu forma de ser, tu alegría y cómo haces especiales los momentos.
-</div>
-</div>
+        <img src="images/foto1.jpg">
+        <img src="images/foto2.jpg">
+        <img src="images/foto3.jpg">
+        <img src="images/foto4.jpg">
+        <img src="images/foto5.jpg">
+        <img src="images/foto6.jpg">
+        <img src="images/foto7.jpg">
+        <img src="images/foto8.jpg">
 
-<div class="letter" onclick="openLetter(this)">
-Gracias por...
-<div class="hidden-text">
-Gracias por cada conversación y cada recuerdo compartido.
-</div>
-</div>
+    </div>
 
-<div class="letter" onclick="openLetter(this)">
-Nunca olvidaré
-<div class="hidden-text">
-Las risas, los momentos inesperados y todo lo vivido juntos.
-</div>
-</div>
-
-</div>
+    <button onclick="nextStep('quiz')">
+        Continuar 🎮
+    </button>
 
 </section>
 
-<section id="final">
+<!-- QUIZ -->
+<section id="quiz" class="screen">
 
-<h2>🌟 Mensaje Final 🌟</h2>
+    <div class="card">
 
-<div class="final-box">
+        <h2>🎮 Quiz</h2>
 
-<p>
+        <p>¿Cómo me gusta llamarte?</p>
 
-A veces no hacen falta grandes palabras.
+        <button onclick="wrong()">Leonela</button>
 
-Solo quiero que recuerdes algo.
+        <button onclick="correctQuiz()">
+            Mi Estrellita ⭐
+        </button>
 
-Gracias por estar.
+        <button onclick="wrong()">Oye tú</button>
 
-Gracias por existir.
+        <p id="respuesta"></p>
 
-Gracias por iluminar mis días.
-
-⭐ Mi Estrellita ⭐
-
-</p>
-
-</div>
+    </div>
 
 </section>
 
-<div id="lightbox">
-<span onclick="closeLightbox()">✖</span>
-<img id="lightbox-img">
-</div>
+<!-- ESTRELLA -->
+<section id="estrella" class="screen">
+
+    <h2>🌌 Encuentra tu estrella</h2>
+
+    <p>
+        Una de estas estrellas es especial.
+    </p>
+
+    <div class="star-grid">
+
+        <span onclick="wrongStar()">⭐</span>
+        <span onclick="wrongStar()">⭐</span>
+        <span onclick="wrongStar()">⭐</span>
+        <span onclick="goodStar()">🌟</span>
+        <span onclick="wrongStar()">⭐</span>
+        <span onclick="wrongStar()">⭐</span>
+
+    </div>
+
+</section>
+
+<!-- CARTAS -->
+<section id="cartas" class="screen">
+
+    <h2>💌 Cartas Secretas</h2>
+
+    <div class="letter" onclick="openLetter(this)">
+        Lo que admiro de ti
+        <div class="content">
+            Tu forma de iluminar cada momento.
+        </div>
+    </div>
+
+    <div class="letter" onclick="openLetter(this)">
+        Gracias por...
+        <div class="content">
+            Estar siempre cuando te necesito.
+        </div>
+    </div>
+
+    <div class="letter" onclick="openLetter(this)">
+        Nunca olvidaré...
+        <div class="content">
+            Todas las risas que hemos compartido.
+        </div>
+    </div>
+
+    <button onclick="nextStep('final')">
+        Abrir sorpresa 🎁
+    </button>
+
+</section>
+
+<!-- FINAL -->
+<section id="final" class="screen">
+
+    <h1>🌟 Gracias 🌟</h1>
+
+    <p class="final-text">
+
+        Gracias por las risas.
+
+        <br><br>
+
+        Gracias por los recuerdos.
+
+        <br><br>
+
+        Gracias por ser tú.
+
+        <br><br>
+
+        No importa cuántas estrellas existan en el cielo...
+
+        <br><br>
+
+        Siempre tendrás un brillo especial para mí.
+
+        <br><br>
+
+        ⭐ Mi Estrellita ⭐
+
+    </p>
+
+</section>
 
 <script src="script.js"></script>
 
