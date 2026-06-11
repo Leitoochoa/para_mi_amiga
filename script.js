@@ -1,13 +1,20 @@
-function nextStep(id){
+function nextStep(id) {
 
-document.querySelectorAll(".screen")
-.forEach(s=>s.classList.remove("active"));
+    const screens = document.querySelectorAll(".screen");
 
-document.getElementById(id)
-.classList.add("active");
+    screens.forEach(screen => {
+        screen.classList.remove("active");
+    });
+
+    const target = document.getElementById(id);
+
+    if(target){
+        target.classList.add("active");
+    } else {
+        console.error("No existe la sección:", id);
+    }
 
 }
-
 function wrong(){
 
 document.getElementById("respuesta")
