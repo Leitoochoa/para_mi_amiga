@@ -27,6 +27,12 @@ function addStar(points = 1){
 
 function nextStep(id){
 
+    const music = document.getElementById("bgMusic");
+
+    if(music && music.paused){
+        music.play();
+    }
+
     document.querySelectorAll(".screen")
     .forEach(screen=>{
         screen.classList.remove("active");
@@ -38,7 +44,6 @@ function nextStep(id){
         target.classList.add("active");
         window.scrollTo(0,0);
     }
-
 }
 
 /* ===================================
