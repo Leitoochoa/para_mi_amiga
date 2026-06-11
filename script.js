@@ -95,7 +95,13 @@ function goodStar(){
 
     createCelebration();
 
-    alert("🌟 Yei, esa es la correcta, asi de especial y unica como tu💕✨ ");
+    alert("🌟✨ ¡La encontraste!
+
+Entre miles de estrellas hay una que brilla de manera diferente, una que destaca sin necesidad de intentarlo. Elegí esta estrella porque me recuerda a ti.
+
+Así como esta estrella es única en el cielo, tú eres única entre todas las personas que he conocido. Tienes una luz especial que no se puede comparar ni reemplazar, y por eso quise que esta estrella te representara.
+
+Gracias por existir y por iluminar, incluso sin darte cuenta, la vida de quienes te rodean.💫💕✨ ");
 
     setTimeout(()=>{
 
