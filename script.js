@@ -97,11 +97,11 @@ function goodStar(){
 
     alert("🌟✨ ¡La encontraste!
 
-Entre miles de estrellas hay una que brilla de manera diferente, una que destaca sin necesidad de intentarlo. Elegí esta estrella porque me recuerda a ti.
+Esta es la estrella especial, porque me recuerda a ti.
+   
+Entre tantas, destaca por su brillo único, igual que tú.
 
-Así como esta estrella es única en el cielo, tú eres única entre todas las personas que he conocido. Tienes una luz especial que no se puede comparar ni reemplazar, y por eso quise que esta estrella te representara.
-
-Gracias por existir y por iluminar, incluso sin darte cuenta, la vida de quienes te rodean.💫💕✨ ");
+Gracias por ser tan especial. 💫💕");
 
     setTimeout(()=>{
 
@@ -210,7 +210,7 @@ function createStar(){
     star.className = "star-fall";
 
     star.innerHTML =
-    Math.random() > 0.5 ? "⭐" : "✨": "🌻";
+    Math.random() > 0.5 ? "⭐" : "✨";
 
     star.style.left =
     Math.random()*100 + "vw";
@@ -253,7 +253,7 @@ function createCelebration(){
         document.createElement("div");
 
         sparkle.innerHTML =
-        Math.random() > 0.5 ? "✨" : "⭐" : "🌻";
+        Math.random() > 0.5 ? "✨" : "⭐";
 
         sparkle.style.position = "fixed";
 
