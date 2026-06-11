@@ -145,11 +145,17 @@ function setupGallery(){
 
         img.addEventListener("click",()=>{
 
-            lightbox.style.display = "flex";
+lightbox.style.display = "flex";
 
-            lightboxImg.src = img.src;
+lightboxImg.src = img.src;
 
-            addStar(1);
+if(!img.dataset.claimed){
+
+    addStar(1);
+
+    img.dataset.claimed = "yes";
+
+}
 
         });
 
@@ -294,9 +300,37 @@ function createCelebration(){
 function showFinalMessage(){
 
     if(starsCollected >= 10){
+const reward =
+document.getElementById("secretReward");
+
+if(reward){
+
+reward.style.display = "inline-block";
+
+}
+        alert(
+`🎁 ¡MISIÓN COMPLETADA!
+
+🌟 Has conseguido todas las estrellas.
+
+Como recompensa:
+
+🌻 Te ganaste un girasol eterno.
+⭐ Un lugar reservado entre mis estrellas favoritas.
+💛 Y un enorme gracias por ser tú.
+
+Con cariño,
+Tu compañero de aventuras ✨`
+        );
+
+    }else{
 
         alert(
-        "🌻✨ ¡Has completado la aventura de Mi Estrellita! ✨🌻"
+`⭐ Has conseguido ${starsCollected}/10 estrellas.
+
+Todavía quedan algunas escondidas por descubrir.
+
+🌻 Sigue explorando, mi estrellita.`
         );
 
     }
@@ -348,3 +382,33 @@ window.onload = ()=>{
     startStars();
 
 };
+const rewardBtn =
+document.getElementById("secretReward");
+
+if(rewardBtn){
+
+rewardBtn.addEventListener("click",()=>{
+
+alert(
+`🌻 RECOMPENSA DESBLOQUEADA 🌻
+
+Si llegaste hasta aquí...
+
+es porque completaste toda la aventura.
+
+Y quiero que sepas algo:
+
+No importa cuántas estrellas existan en el cielo.
+
+Siempre habrá una que destaque.
+
+Y para mí...
+
+esa estrella eres tú.
+
+⭐✨🌻`
+);
+
+});
+
+}
