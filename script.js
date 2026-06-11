@@ -95,13 +95,13 @@ function goodStar(){
 
     createCelebration();
 
-    alert("🌟✨ ¡La encontraste!
+alert(`🌟✨La encontraste!
 
 Esta es la estrella especial, porque me recuerda a ti.
-   
+
 Entre tantas, destaca por su brillo único, igual que tú.
 
-Gracias por ser tan especial. 💫💕");
+Gracias por ser tan especial. 💫💕`);
 
     setTimeout(()=>{
 
