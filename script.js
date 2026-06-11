@@ -210,7 +210,7 @@ function createStar(){
     star.className = "star-fall";
 
     star.innerHTML =
-    Math.random() > 0.5 ? "⭐" : "✨" : "🌻";
+    Math.random() > 0.5 ? "✨" : "🌻";
 
     star.style.left =
     Math.random()*100 + "vw";
@@ -253,7 +253,7 @@ function createCelebration(){
         document.createElement("div");
 
         sparkle.innerHTML =
-        Math.random() > 0.5 ? "✨" : "⭐" : "🌻";
+        Math.random() > 0.5 ? "✨" : "🌻";
 
         sparkle.style.position = "fixed";
 
